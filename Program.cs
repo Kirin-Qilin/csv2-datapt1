@@ -96,9 +96,10 @@ class Program
                 UserRecord heherecordhehehe = new UserRecord(hehehehehe[0], hehehehehe[1], hehehehehe[2], hehehehehe[3], hehehehehe[4] == "TRUE", hehehehehe[5], hehehehehe[6] == "TRUE", hehehehehe[7], hehehehehe[8], hehehehehe[9], hehehehehe[10], hehehehehe[11], hehehehehe[12]);
                 WhyAmIDoingThis.Add(heherecordhehehe);
             }
+            Console.WriteLine("huh");
         }
         return WhyAmIDoingThis;
-
+        
     }
         
 
