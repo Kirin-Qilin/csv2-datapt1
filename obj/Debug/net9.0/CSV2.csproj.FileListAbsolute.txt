@@ -1,0 +1,14 @@
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\CSV2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\CSV2.AssemblyInfoInputs.cache
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\CSV2.AssemblyInfo.cs
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\CSV2.csproj.CoreCompileInputs.cache
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\bin\Debug\net9.0\CSV2.exe
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\bin\Debug\net9.0\CSV2.deps.json
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\bin\Debug\net9.0\CSV2.runtimeconfig.json
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\bin\Debug\net9.0\CSV2.dll
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\bin\Debug\net9.0\CSV2.pdb
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\CSV2.dll
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\refint\CSV2.dll
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\CSV2.pdb
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\CSV2.genruntimeconfig.cache
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\ref\CSV2.dll

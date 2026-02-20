@@ -1,0 +1,20 @@
+Date,Student ID,Name,Course,Event
+1/10/25,123,Fred,CS Apps,Absent
+1/11/25,123,Fred,CS Apps,Absent
+1/15/25,130,Sue,Cyber,Tardy
+1/15/25,123,Fred,CS Apps,Tardy
+1/20/25,145,Mary,Physics,Absent
+1/21/25,110,Bill,Chemistry,Absent
+1/22/25,123,Fred,Cyber,Tardy
+1/23/25,110,Bill,Physics,Absent
+1/24/25,130,Sue,CS Apps,Tardy
+1/25/25,110,Bill,Physics,Absent
+1/26/25,145,Mary,Physics,Absent
+1/27/25,130,Sue,Chemistry,Tardy
+1/28/25,123,Fred,Cyber,Absent
+1/29/25,110,Bill,CS Apps,Absent
+1/30/25,123,Fred,Cyber,Tardy
+1/31/25,145,Mary,Physics,Absent
+2/1/25,130,Sue,Physics,Absent
+2/2/25,145,Mary,Physics,Tardy
+2/3/25,123,Fred,Cyber,Tardy
