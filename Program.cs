@@ -86,7 +86,7 @@ class Program
     {
         // Dictionary<string, List<students>> d = new Dictionary<string, List<students>>();
         List<UserRecord> WhyAmIDoingThis = new List<UserRecord>();
-        //string filePath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory + "\\Francis Tuttle Identities_Basic (3).csv");
+        string totallynotfilePath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory + "\\OGE.csv.csv");
         using StreamReader sr = new StreamReader(filePath);
         {
             sr.ReadLine();
@@ -97,7 +97,7 @@ class Program
                 UserRecord heherecordhehehe = new UserRecord(hehehehehe[0], hehehehehe[1], hehehehehe[2], hehehehehe[3], hehehehehe[4] == "TRUE", hehehehehe[5], hehehehehe[6] == "TRUE", hehehehehe[7], hehehehehe[8], hehehehehe[9], hehehehehe[10], hehehehehe[11], hehehehehe[12]);
                 WhyAmIDoingThis.Add(heherecordhehehe);
             }
-            Console.WriteLine("huh");
+   
         }
         return WhyAmIDoingThis;
         
@@ -120,9 +120,9 @@ class Program
         // }
 
         //UserRecord read = new UserRecord();
-        List<UserRecord> usershehehe = Read("bin/Debug/net9.0/Francis Tuttle Identities_Basic (3).csv");
+        List<UserRecord> usershehehe = Read("OGE.csv.csv");
 
-        Console.WriteLine("row maxxing" + usershehehe.Count);
+        Console.WriteLine("row maxxing " + usershehehe.Count);
 
     }
 
