@@ -12,3 +12,4 @@ C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\refint\CSV2.d
 C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\CSV2.pdb
 C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\CSV2.genruntimeconfig.cache
 C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\ref\CSV2.dll
+C:\Users\mm1106187\Desktop\C# Project Folder\CSV2\obj\Debug\net9.0\CSV2.sourcelink.json

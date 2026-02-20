@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Net.Http.Headers;
+using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Text;
@@ -101,9 +102,9 @@ class Program
         return WhyAmIDoingThis;
         
     }
-        
 
-    
+
+
     static void Main(string[] args)
     {
 
@@ -117,6 +118,11 @@ class Program
         // {
         //     Console.WriteLine(e + "is not a Super Awesome Sauce Array");
         // }
+
+        //UserRecord read = new UserRecord();
+        List<UserRecord> usershehehe = Read("bin/Debug/net9.0/Francis Tuttle Identities_Basic (3).csv");
+
+        Console.WriteLine("row maxxing" + usershehehe.Count);
 
     }
 
