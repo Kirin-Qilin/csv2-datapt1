@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Net.Http.Headers;
-using System.Reflection.Metadata;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.Marshalling;
-using System.Text;
-using Microsoft.Win32.SafeHandles;
+using System.Linq;
 
 class Program
 {
@@ -105,6 +98,8 @@ class Program
 
 
 
+
+
     static void Main(string[] args)
     {
 
@@ -123,6 +118,18 @@ class Program
         List<UserRecord> usershehehe = Read("OGE.csv.csv");
 
         Console.WriteLine("row maxxing " + usershehehe.Count);
+
+        List<UserRecord> WhyAmIDoingThis = new List<UserRecord>();
+        var inactiveRecords = WhyAmIDoingThis
+        .Where(r => r.cloudLifecycleState == false)
+        .ToList();
+
+        foreach (var why in inactiveRecords)
+        {
+            Console.WriteLine($"Name: {why.displayName}, Active: {why.cloudLifecycleState}");
+        }
+
+        Console.WriteLine($"\nNumber of inactive records: {inactiveRecords.Count}");
 
     }
 
