@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 class Program
 {
@@ -87,13 +88,13 @@ class Program
             {
                 string line = sr.ReadLine();
                 string[] hehehehehe = line.Split(',');
-                UserRecord heherecordhehehe = new UserRecord(hehehehehe[0], hehehehehe[1], hehehehehe[2], hehehehehe[3], hehehehehe[4] == "TRUE", hehehehehe[5], hehehehehe[6] == "TRUE", hehehehehe[7], hehehehehe[8], hehehehehe[9], hehehehehe[10], hehehehehe[11], hehehehehe[12]);
+                UserRecord heherecordhehehe = new UserRecord (hehehehehe[0], hehehehehe[1], hehehehehe[2], hehehehehe[3], hehehehehe[4] == "TRUE", hehehehehe[5], hehehehehe[6] == "TRUE", hehehehehe[7], hehehehehe[8], hehehehehe[9], hehehehehe[10], hehehehehe[11], hehehehehe[12]);
                 WhyAmIDoingThis.Add(heherecordhehehe);
             }
-   
+
         }
         return WhyAmIDoingThis;
-        
+
     }
 
 
@@ -115,74 +116,76 @@ class Program
         // }
 
         //UserRecord read = new UserRecord();
-        List<UserRecord> usershehehe = Read("OGE.csv.csv");
+        List<UserRecord> fornow = Read("OGE.csv.csv");
 
-        Console.WriteLine("row maxxing " + usershehehe.Count);
+        // Console.WriteLine("row maxxing " + usershehehe.Count);
 
-        List<UserRecord> WhyAmIDoingThis = new List<UserRecord>();
-        var inactiveRecords = WhyAmIDoingThis
-        .Where(r => r.cloudLifecycleState == false)
-        .ToList();
+        var inactive = from record in fornow
+                       where record.cloudLife == false
+                       select record;
 
-        foreach (var why in inactiveRecords)
+                       
+                       
+
+        // foreach (var record in inactive)
+        // {
+        //     Console.WriteLine(record);
+        // }
+        Console.WriteLine($"Number of inactive records: {inactive.Count()}");
+
+  }
+
+}
+
+    public struct UserRecord
+    {
+        public UserRecord(
+            string displayName,
+            string firstName,
+            string lastName,
+            string workEmail,
+            bool cloudLife,
+            string identityId,
+            bool isManager,
+            string department,
+            string jobTitle,
+            string access1Type,
+            string access1Source,
+            string access1DisplayName,
+            string access1Description)
         {
-            Console.WriteLine($"Name: {why.displayName}, Active: {why.cloudLifecycleState}");
+            this.displayName = displayName;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.workEmail = workEmail;
+            this.cloudLife = cloudLife;
+            this.identityId = identityId;
+            this.isManager = isManager;
+            this.department = department;
+            this.jobTitle = jobTitle;
+            this.access1Type = access1Type;
+            this.access1Source = access1Source;
+            this.access1DisplayName = access1DisplayName;
+            this.access1Description = access1Description;
         }
 
-        Console.WriteLine($"\nNumber of inactive records: {inactiveRecords.Count}");
+        public string displayName { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string workEmail { get; set; }
+        public bool cloudLife { get; set; }
+        public string identityId { get; set; }
+        public bool isManager { get; set; }
+        public string department { get; set; }
+        public string jobTitle { get; set; }
+        public string access1Type { get; set; }
+        public string access1Source { get; set; }
+        public string access1DisplayName { get; set; }
+        public string access1Description { get; set; }
 
     }
 
-    
 
-}
-
-public struct UserRecord
-{
-    public UserRecord(
-        string displayName,
-        string firstName,
-        string lastName,
-        string workEmail,
-        bool cloudLifecycleState,
-        string identityId,
-        bool isManager,
-        string department,
-        string jobTitle,
-        string access1Type,
-        string access1Source,
-        string access1DisplayName,
-        string access1Description)
-    {
-        this.displayName = displayName;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.workEmail = workEmail;
-        this.cloudLifecycleState = cloudLifecycleState;
-        this.identityId = identityId;
-        this.isManager = isManager;
-        this.department = department;
-        this.jobTitle = jobTitle;
-        this.access1Type = access1Type;
-        this.access1Source = access1Source;
-        this.access1DisplayName = access1DisplayName;
-        this.access1Description = access1Description;
-    }
-
-    public string displayName { get; set; }
-    public string firstName { get; set; }
-    public string lastName { get; set; }
-    public string workEmail { get; set; }
-    public bool cloudLifecycleState { get; set; }
-    public string identityId { get; set; }
-    public bool isManager { get; set; }
-    public string department { get; set; }
-    public string jobTitle { get; set; }
-    public string access1Type { get; set; }
-    public string access1Source { get; set; }
-    public string access1DisplayName { get; set; }
-    public string access1Description { get; set; }
-}
 // public struct students
 // {
 
