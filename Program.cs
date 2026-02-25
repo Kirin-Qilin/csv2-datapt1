@@ -115,52 +115,32 @@ class Program
         //     Console.WriteLine(e + "is not a Super Awesome Sauce Array");
         // }
 
-        //UserRecord read = new UserRecord();
+        
         List<UserRecord> fornow = Read("OGE.csv.csv");  
+        var WhYwONTtHISwORK =
+            from record in fornow
+            where !string.IsNullOrWhiteSpace(record.department)
+            group record by record.department into deptGroup
+            orderby deptGroup.Key
+            select new
+            {
+                Department = deptGroup.Key,
+                WhyAmIDoingThis =
+                    (from r in deptGroup
+                    where !r.cloudLife &&
+                        !string.IsNullOrWhiteSpace(r.access1Type)
+                    select r.displayName)
+                    .Distinct()
+                    .Count()
+            };
+        Console.WriteLine("WHY WONT THIS WORK");
 
 
+        foreach (var dept in  WhYwONTtHISwORK)
+        {
+            Console.WriteLine($"{dept.Department,-25} {dept.WhyAmIDoingThis}");
+        }
 
-
-
-
-    // var inactiveUsers =
-        //     from record in fornow
-        //     where !record.cloudLife
-        //     select record;
-
-
-        // var groupedInactive =
-        //     from record in inactiveUsers
-        //     group record by record.displayName into userGroup
-        //     orderby userGroup.Key
-        //     select userGroup;
-
-        //     Console.WriteLine("Inactive Users and Their Access:");
-
-
-        // foreach (var userGroup in groupedInactive)
-        // {
-
-        //     var validAccesses = userGroup
-        //         .Where(r =>!string.IsNullOrWhiteSpace(r.access1Source) && !string.IsNullOrWhiteSpace(r.access1DisplayName));
-
-
-        //     if (!validAccesses.Any())
-        //         continue;
-
-
-        //     Console.WriteLine($"User: {userGroup.Key}");
-
-
-        //     foreach (var access in validAccesses)
-        //     {
-        //         Console.WriteLine($"   Source: {access.access1Source}");
-        //         Console.WriteLine($"   Access: {access.access1DisplayName}");
-        //     }
-
-
-        //     Console.WriteLine();
-        // }
 
     }
 
