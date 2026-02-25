@@ -116,53 +116,62 @@ class Program
         // }
 
         //UserRecord read = new UserRecord();
-        List<UserRecord> fornow = Read("OGE.csv.csv");
-
-
-
-        
-         var inactiveUsers =
+        List<UserRecord> fornow = Read("OGE.csv.csv");  
+    var departments =
         from record in fornow
-        where !record.cloudLife
-        select record;
+        where !string.IsNullOrWhiteSpace(record.department)
+        group record by record.department into deptGroup
+        orderby deptGroup.Key
+        select deptGroup.Key;
 
-
-    var groupedInactive =
-        from record in inactiveUsers
-        group record by record.displayName into userGroup
-        orderby userGroup.Key
-        select userGroup;
-                       
-        Console.WriteLine("\nInactive Users and Their Access:\n");
-
-
-    foreach (var userGroup in groupedInactive)
-    {
-
-        var validAccesses = userGroup
-            .Where(r =>
-                !string.IsNullOrWhiteSpace(r.access1Source) &&
-                !string.IsNullOrWhiteSpace(r.access1DisplayName));
-
-
-        if (!validAccesses.Any())
-            continue;
-
-
-        Console.WriteLine($"User: {userGroup.Key}");
-
-
-        foreach (var access in validAccesses)
+        foreach (var dept in departments)
         {
-            Console.WriteLine($"   Source: {access.access1Source}");
-            Console.WriteLine($"   Access: {access.access1DisplayName}");
+            Console.WriteLine(dept);
         }
 
 
-        Console.WriteLine();
+
+
+    // var inactiveUsers =
+        //     from record in fornow
+        //     where !record.cloudLife
+        //     select record;
+
+
+        // var groupedInactive =
+        //     from record in inactiveUsers
+        //     group record by record.displayName into userGroup
+        //     orderby userGroup.Key
+        //     select userGroup;
+
+        //     Console.WriteLine("Inactive Users and Their Access:");
+
+
+        // foreach (var userGroup in groupedInactive)
+        // {
+
+        //     var validAccesses = userGroup
+        //         .Where(r =>!string.IsNullOrWhiteSpace(r.access1Source) && !string.IsNullOrWhiteSpace(r.access1DisplayName));
+
+
+        //     if (!validAccesses.Any())
+        //         continue;
+
+
+        //     Console.WriteLine($"User: {userGroup.Key}");
+
+
+        //     foreach (var access in validAccesses)
+        //     {
+        //         Console.WriteLine($"   Source: {access.access1Source}");
+        //         Console.WriteLine($"   Access: {access.access1DisplayName}");
+        //     }
+
+
+        //     Console.WriteLine();
+        // }
+
     }
-        
-  }
 
 }
 
