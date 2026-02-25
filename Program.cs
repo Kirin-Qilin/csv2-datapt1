@@ -117,17 +117,8 @@ class Program
 
         //UserRecord read = new UserRecord();
         List<UserRecord> fornow = Read("OGE.csv.csv");  
-    var departments =
-        from record in fornow
-        where !string.IsNullOrWhiteSpace(record.department)
-        group record by record.department into deptGroup
-        orderby deptGroup.Key
-        select deptGroup.Key;
 
-        foreach (var dept in departments)
-        {
-            Console.WriteLine(dept);
-        }
+
 
 
 
