@@ -118,21 +118,50 @@ class Program
         //UserRecord read = new UserRecord();
         List<UserRecord> fornow = Read("OGE.csv.csv");
 
-        // Console.WriteLine("row maxxing " + usershehehe.Count);
 
-        var inactive = from record in fornow
-                       where record.cloudLife == false
-                       select record;
 
+        
+         var inactiveUsers =
+        from record in fornow
+        where !record.cloudLife
+        select record;
+
+
+    var groupedInactive =
+        from record in inactiveUsers
+        group record by record.displayName into userGroup
+        orderby userGroup.Key
+        select userGroup;
                        
-                       
+        Console.WriteLine("\nInactive Users and Their Access:\n");
 
-        // foreach (var record in inactive)
-        // {
-        //     Console.WriteLine(record);
-        // }
-        Console.WriteLine($"Number of inactive records: {inactive.Count()}");
 
+    foreach (var userGroup in groupedInactive)
+    {
+
+        var validAccesses = userGroup
+            .Where(r =>
+                !string.IsNullOrWhiteSpace(r.access1Source) &&
+                !string.IsNullOrWhiteSpace(r.access1DisplayName));
+
+
+        if (!validAccesses.Any())
+            continue;
+
+
+        Console.WriteLine($"User: {userGroup.Key}");
+
+
+        foreach (var access in validAccesses)
+        {
+            Console.WriteLine($"   Source: {access.access1Source}");
+            Console.WriteLine($"   Access: {access.access1DisplayName}");
+        }
+
+
+        Console.WriteLine();
+    }
+        
   }
 
 }
